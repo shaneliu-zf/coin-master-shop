@@ -4,7 +4,9 @@ import React, { useState, useEffect } from 'react';
 // For firebase
 import { database } from './firebase'
 import { ref, push, child, update, query, getDatabase, limitToLast, onValue } from "firebase/database";
-export default class Post extends React.Component {
+
+
+export default class databaseFactory extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -12,6 +14,18 @@ export default class Post extends React.Component {
             posts: [],
         };
     }
+
+    getData = (pathlist) => {
+        const database = ref(getDatabase());
+        let nowlocal = database;
+        pathlist.forEach(element => {
+            nowlocal = query(nowlocal, element + "");
+        });
+        console.log(nowlocal);
+
+    }
+
+
     /* TODO: finish this method */
     getPosts = () => {
         const recentPostsRef = query(ref(getDatabase(), 'posts')); /* TODO: use the query() method */
