@@ -29,7 +29,7 @@ export default class Post extends React.Component {
         update(ref(database), updates);
 
 
-        //e.preventDefault()
+        e.preventDefault()
     };
 
     render() {
@@ -39,12 +39,8 @@ export default class Post extends React.Component {
         /* TODO: convert this.state.posts into a list of <ListItem>. Remember to set the key and the post props */
         return (
             <div>
-                <h2>Submit your post!</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <label>
-                        New post:
-                        <input name="post" onChange={this.handleChange} />
-                    </label>
+                    <input name="post" onChange={this.handleChange} />
                     <input type="submit" value="Post!" />
                 </form>
             </div>
