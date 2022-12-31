@@ -1,23 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import GetDatas from './backend/databaseCtl/getData';
 
 function App() {
+  const data = GetDatas({ path: "username" })
+  // console.log("data")
+  // console.log(data)
+  //const setData = (datas) => { data = datas };
+  //const fun = <GetData path="userdata/admin" setData={setData} />;
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {Object.entries(data).map(
+        ([key, value]) => <p>{key}: {value}</p>
+      )}
+      {/* {data} */}
     </div>
   );
 }

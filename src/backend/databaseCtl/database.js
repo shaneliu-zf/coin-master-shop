@@ -15,17 +15,6 @@ export default class databaseFactory extends React.Component {
         };
     }
 
-    getData = (pathlist) => {
-        const database = ref(getDatabase());
-        let nowlocal = database;
-        pathlist.forEach(element => {
-            nowlocal = query(nowlocal, element + "");
-        });
-        console.log(nowlocal);
-
-    }
-
-
     /* TODO: finish this method */
     getPosts = () => {
         const recentPostsRef = query(ref(getDatabase(), 'posts')); /* TODO: use the query() method */
