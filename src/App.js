@@ -3,7 +3,7 @@ import './App.css';
 import GetDatas from './backend/databaseCtl/getData';
 
 function App() {
-  const data = GetDatas({ path: "username" })
+  const data = GetDatas({ path: "userdata" })
   // console.log("data")
   // console.log(data)
   //const setData = (datas) => { data = datas };
