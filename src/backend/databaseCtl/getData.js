@@ -7,21 +7,20 @@ function GetData(props) {
     //input  (str)path:
     //output  (object)data
     const [data, setData] = useState([]);
-
-    let pathlist = props.path.split("/");
     //console.log(props.target)
     useEffect(() => {
-        //const recentPostsRef = props.query// query(ref(getDatabase()));
         const recentPostsRef = query(ref(getDatabase()));
         // query need onvalue to work ,idk why
         return onValue(
             recentPostsRef,
             (snapshot) => {
                 let tmp;
-                pathlist.forEach(element => {
-                    tmp = snapshot.child(element);
+                tmp = snapshot.child(props.path);
+                //let pathlist = props.path.split("/");
+                // pathlist.forEach(element => {
+                //     tmp = snapshot.child(element);
 
-                });
+                // });
                 setData(tmp.val());
             },
             {

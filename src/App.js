@@ -1,13 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import GetDatas from './backend/databaseCtl/getData';
+import Post from './backend/databaseCtl/setData';
 
 function App() {
   const data = GetDatas({ path: "userdata" })
-  // console.log("data")
-  // console.log(data)
-  //const setData = (datas) => { data = datas };
-  //const fun = <GetData path="userdata/admin" setData={setData} />;
 
 
   return (
@@ -16,6 +13,7 @@ function App() {
         ([key, value]) => <p>{key}: {value}</p>
       )}
       {/* {data} */}
+      <Post />
     </div>
   );
 }
