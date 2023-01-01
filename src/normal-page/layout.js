@@ -1,16 +1,18 @@
 import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
-import title from "./image/title.png";
+import title from "../image/title.png";
 import { MDBCol } from "mdbreact";
 import React from "react";
 import { Routes, Route, Outlet, Link, useParams, useSearchParams } from "react-router-dom";
 
-import './css/style.css'
+import '../css/style.css'
+import {newVisit} from "../function/function.js"
 
 function Layout() {
+    newVisit();
     return (
         <div>
             <Navbar id='n_coin' expand='lg' variant="dark">
-                <Navbar.Brand href="/home">
+                <Navbar.Brand href="/">
                     <div className='logo'>
                         <div>
                             <img src={title} height='100%' width='100%' />
@@ -23,7 +25,7 @@ function Layout() {
                 <Navbar.Collapse className='hamburger' >
                     <Nav className="ms-auto" >
                         <Nav.Link></Nav.Link>
-                        <Nav.Link href="/home" className='nav_title'>home</Nav.Link>
+                        <Nav.Link href="/" className='nav_title'>home</Nav.Link>
                         <Nav.Link href="/about" className='nav_title'>about</Nav.Link>
                         <Nav.Link href="/grade" className='nav_title'>grade</Nav.Link>
                         <Nav.Link href="/product" className='nav_title'>product</Nav.Link>

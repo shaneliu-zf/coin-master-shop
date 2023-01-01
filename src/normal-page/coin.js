@@ -3,20 +3,18 @@ import { Row, Col, Button } from 'react-bootstrap'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import './css/style.css'
-import './css/coin.css'
+import '../css/style.css'
+import '../css/coin.css'
 
-import md1885 from './image/1885md.jpg'
-import md1885_2 from './image/1885md2.jpg'
+import md1885 from '../image/1885md.jpg'
+import md1885_2 from '../image/1885md2.jpg'
+import {useParams} from "react-router-dom";
 
-class Coin extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+function Coin(){
+    let { coin_id } = useParams();
 
-    render() {
-        return (
-            <div >
+    return (
+            <div>
                 <div className='coin_bg coin_page'>
                     <Row>
                         <Col sm={12} md={3}>
@@ -110,8 +108,7 @@ class Coin extends React.Component {
                     </Row>
                 </div>
             </div>
-        )
-    }
+    );
 }
 
 export default Coin;

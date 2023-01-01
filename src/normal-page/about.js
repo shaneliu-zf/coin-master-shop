@@ -3,21 +3,16 @@ import { Container, Row, Col, Accordion } from 'react-bootstrap'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import './css/style.css'
-import './css/about.css'
+import '../css/style.css'
+import '../css/about.css'
 
-import nonorze from './image/nonorze.png'
-import shane from './image/shane.png'
-import tyk from './image/tyk.png'
-import star from './image/star.png'
+import nonorze from '../image/nonorze.png'
+import shane from '../image/shane.png'
+import tyk from '../image/tyk.png'
+import star from '../image/star.png'
 
-class About extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
+function About(){
+    return (
             <div className='whole_bg'>
                 <div>
                     <div className='about_background'></div>
@@ -130,8 +125,7 @@ class About extends React.Component {
                     </Accordion>
                 </div>
             </div>
-        )
-    }
+        );
 }
 
 export default About;

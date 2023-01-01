@@ -4,27 +4,20 @@ import { MDBCol } from "mdbreact";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.js';
-import './css/style.css'
-import './css/client.css'
+import '../css/style.css'
+import '../css/client.css'
 
-import title from './image/title.png'
+import title from '../image/title.png'
 
-class Register extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
+function Login(){
+    return (
             <div>
-
-
                 <Row className='member'>
                     <Col sm={12} md={6}></Col>
                     <Col sm={12} md={6}>
                         <div className='information'>
                             <div className='information_bg '>
-                                <h1>REGISTER</h1>
+                                <h1>LOGIN</h1>
                                 <Form>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>
@@ -32,7 +25,7 @@ class Register extends React.Component {
                                         </Form.Label>
                                         <Form.Control type="email" placeholder="Enter account" />
                                         <p>
-                                            Please enter the account name you want
+                                            Please enter your account to login
                                         </p>
                                     </Form.Group>
 
@@ -45,35 +38,18 @@ class Register extends React.Component {
                                         <Form.Control type="password" placeholder="Password" />
                                     </Form.Group>
 
-                                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                                        <Form.Label>
-                                            <h5>
-                                                Confirm Password
-                                            </h5>
-                                        </Form.Label>
-                                        <Form.Control type="password" placeholder="Password" />
-                                    </Form.Group>
-
                                     <div className='center'>
                                         <Button type="submit" className='button_blue'>
-                                            Register
+                                            Login
                                         </Button>
                                     </div>
                                 </Form>
-                                <br></br>
-                                <hr className='hr_white'></hr>
-                                <p>
-                                    <span className='register_word'><u>login</u></span>
-                                </p>
                             </div>
                         </div>
                     </Col>
                 </Row>
-
-
             </div>
-        )
-    }
+        );
 }
 
-export default Register;
+export default Login;

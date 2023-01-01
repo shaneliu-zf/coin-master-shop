@@ -1,12 +1,12 @@
 import { Carousel, CarouselItem, Col, Container, Nav, Navbar, Row } from "react-bootstrap";
-import carousel01 from "./image/carousel01.png";
-import carousel02 from "./image/carousel02.png";
-import carousel03 from "./image/carousel03.png";
-import each from "./image/each.png";
+import carousel01 from "../image/carousel01.png";
+import carousel02 from "../image/carousel02.png";
+import carousel03 from "../image/carousel03.png";
+import each from "../image/each.png";
 import React from "react";
 
-import './css/style.css'
-import './css/main.css'
+import '../css/style.css'
+import '../css/main.css'
 function Main() {
     return (
         <div>
