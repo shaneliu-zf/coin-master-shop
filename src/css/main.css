@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+.carousel_background {
+    background-color: #efefef;
+}
+
+.carousel_item {
+    padding-top: 50%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.carousel_title {
+    color: #454d9b;
+}
+
+.arrival {
+    padding: 1%;
+    background-image: url("../image/arrival.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    box-shadow: 0 0.3rem 2rem rgba(0, 0, 0, 0.85);
+}
+
+.arrival_title {
+    color: white;
+    margin: 2%;
+}
+
+.arrival_content {
+    color: #454d9b;
+}
+
+.arrival_item {
+    padding-left: 30%;
+    padding-right: 30%;
+    padding: 10%;
+    background-color: #f6f4f1;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    margin-bottom: 5%;
+}
+
+.item_inner {
+    padding-left: 5%;
+    padding-right: 5%;
+}
