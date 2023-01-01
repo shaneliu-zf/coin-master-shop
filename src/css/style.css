@@ -41,10 +41,18 @@ p {
     border-top: 2px solid rgb(255, 255, 255);
 }
 
+.blue_word {
+    color: #454d9b;
+}
+
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.whole_bg {
+    background-color: #efefef;
 }
 
 /* Navbar --------------------------------------------------------*/

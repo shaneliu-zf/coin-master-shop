@@ -6,14 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import Main from './main';
 import Login from './login';
 import Register from './register';
-
+import About from './about';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <Main /> */}
     {/* <Login /> */}
-    <Register />
+    {/* <Register /> */}
+    <About />
   </React.StrictMode>
 );
 
