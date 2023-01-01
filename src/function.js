@@ -2,7 +2,7 @@ import { child, push, ref, update } from 'firebase/database';
 import React, { useEffect, useState } from 'react';
 import { database } from './backend/databaseCtl/firebase';
 import GetDatas from "./backend/databaseCtl/getData";
-import { databaseInputWithHash } from './backend/databaseCtl/setData';
+import { ChangeData, databaseInputWithHash } from './backend/databaseCtl/setData';
 
 export function GetNotSoldItems() {
     /*
@@ -122,20 +122,29 @@ function getCart(customer_id) {
      * 回傳商品陣列
      *
      * */
+    //return GetDatas({path:'/Cart'})
 
 }
 
 
-export function getCustomerCount() {
+export function GetCustomerCount() {
     /*
      * 回傳customer_count
      */
-    return GetDatas({ path: '/customer_count' })
+    return parseInt(GetDatas({ path: '/customer_count' }))
 }
-function customerCountAddOne() {
+export function CustomerCountAddOne() {
     /*
      * 把資料庫的customer_count加1
      */
+    let tmp = GetDatas({ path: '/customer_count' })
+    console.log('tmp')
+    console.log(tmp)
+    if (typeof (tmp) === typeof (1)) {
+        ChangeData('/customer_count', (tmp + 1))
+
+    }
+
 }
 
 
@@ -180,6 +189,6 @@ function newVisit() {
 
 
 function okYourAreNewVisitor() {
-    customerCountAddOne();
-    document.cookie = 'user=' + encodeURIComponent(getCustomerCount() * 17);
+    CustomerCountAddOne();
+    document.cookie = 'user=' + encodeURIComponent(GetCustomerCount() * 17);
 }

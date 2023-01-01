@@ -12,3 +12,15 @@ export function databaseInputWithHash(type, new_item) {
     console.log(new_item)
     update(ref(database), updates);
 }
+export function ChangeData(path, new_value) {
+    /*
+    input type and insert data
+    */
+    console.log(path)
+    console.log(new_value)
+    console.log("AAAA")
+    console.log(typeof (new_value))
+    const updates = {};
+    updates[path] = new_value;
+    update(ref(database), updates);
+}
