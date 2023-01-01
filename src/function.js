@@ -7,30 +7,50 @@ export function GetNotSoldItems() {
      */
     let coinlist = GetDatas({ path: "items" })
     const [ansList, setAnsList] = useState([]);
+    useEffect(() => {
+        Object.entries(coinlist).map(
+            ([key, value]) => {
+                //console.log(value['sold'])
+                Object.entries(value).map(
+                    ([key1, value1]) => {
+                        if (key1 == "sold" && value1 == false) {
+                            setAnsList(value)
 
-    Object.entries(coinlist).map(
-        ([key, value]) => {
-            Object.entries(value).map(
-                ([key1, value1]) => {
+                        }
 
+                    });
+            }
+        )
 
-                    if (key1 == "sold" && value1 == false) {
-                        setAnsList(value)
-
-                    }
-
-                });
-        }
-    )
+    })
     return ansList
+
 
 }
 
-function getItemOrFalse(item_id) {
+export function GetItemOrFalse(item_id) {
     /*
      * 回傳商品json
      * 如果sold為true，則回傳False
      */
+    let coinlist = GetDatas({ path: "items" })
+    const [ansList, setAnsList] = useState([]);
+
+    useEffect(() => {
+        Object.entries(coinlist).map(
+            ([key, value]) => {
+                if (value['item_id'] == item_id && value['sold'] == false) {
+                    setAnsList(value)
+                } else {
+                    setAnsList(false)
+                }
+            }
+        )
+    })
+
+    return ansList
+
+
 }
 
 
