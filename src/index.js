@@ -1,13 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+
 import reportWebVitals from './reportWebVitals';
+import Main from './main';
+import Login from './login';
+import Register from './register';
+import About from './about';
+import Product from './product';
+import Coin from './coin';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <Main /> */}
+    {/* <Login /> */}
+    {/* <Register /> */}
+    {/* <About /> */}
+    {/* <Product /> */}
+    <Coin />
   </React.StrictMode>
 );
 
