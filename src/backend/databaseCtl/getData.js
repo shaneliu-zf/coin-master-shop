@@ -4,7 +4,7 @@ import { database } from './firebase'
 import { ref, push, child, update, query, getDatabase, limitToLast, onValue } from "firebase/database";
 
 function GetData(props) {
-    //input  (str)path:
+    //input  {path:(str)}:
     //output  (object)data
     const [data, setData] = useState([]);
     //console.log(props.target)

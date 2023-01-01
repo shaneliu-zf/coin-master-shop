@@ -1,5 +1,8 @@
+import { child, push, ref, update } from 'firebase/database';
 import React, { useEffect, useState } from 'react';
+import { database } from './backend/databaseCtl/firebase';
 import GetDatas from "./backend/databaseCtl/getData";
+import { databaseInputWithHash } from './backend/databaseCtl/setData';
 
 export function GetNotSoldItems() {
     /*
@@ -46,6 +49,7 @@ export function GetItemOrFalse(item_id) {
                 }
             }
         )
+        //ItemSold(item_id)
     })
 
     return ansList
@@ -54,26 +58,45 @@ export function GetItemOrFalse(item_id) {
 }
 
 
-function itemSold(item_id) {
+export function ItemSold(item_id) {
     /*
      * 修改商品的sold成true
      */
+    let coinlist = GetDatas({ path: "items" })
+    const [ansList, setAnsList] = useState([]);
+
+    useEffect(() => {
+        Object.entries(coinlist).map(
+            ([key, value]) => {
+                if (value['item_id'] == item_id && value['sold'] == false) {
+                    const updates = {};
+                    updates['/items/' + key + '/sold'] = true;
+                    update(ref(database), updates);
+                    setAnsList(value)
+                }
+            }
+        )
+    })
+    return ansList
+
 }
 
 
-function addItem(new_item) {
+export function AddItem(new_item) {
     //new_item為商品json
     /*
      * 在資料庫新增新的商品
      */
+    databaseInputWithHash('items', new_item)
 }
 
 
-function addTrade(new_trade) {
+export function AddTrade(new_trade) {
     //new_item為交易json
     /*
      * 在資料庫新增新的交易流水
      */
+    databaseInputWithHash('trade', new_trade)
 }
 
 
@@ -103,10 +126,11 @@ function getCart(customer_id) {
 }
 
 
-function getCustomerCount() {
+export function getCustomerCount() {
     /*
      * 回傳customer_count
      */
+    return GetDatas({ path: '/customer_count' })
 }
 function customerCountAddOne() {
     /*
