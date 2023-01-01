@@ -45,6 +45,10 @@ p {
     color: #454d9b;
 }
 
+.yellow_word {
+    color: #b88e50;
+}
+
 .center {
     display: flex;
     justify-content: center;

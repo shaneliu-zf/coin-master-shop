@@ -1,0 +1,17 @@
+@charset "utf-8";
+
+.coin_page {
+    /* padding-left: 10%; */
+    background-image: url("../image/coin.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background: url('../image/coin.png') no-repeat fixed; */
+    background-color: #efefef;
+}
+
+.coin_bg {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 10%;
+    padding-bottom: 9%;
+}

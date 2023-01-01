@@ -33,7 +33,7 @@ class Product extends React.Component {
 
     render() {
         return (
-            <div className='test'>
+            <div className='product_page'>
                 {/* Navbar on the top ----------------------------*/}
                 <Navbar className='navbar' bg='dark' expand='lg' collapseOnSelect variant="dark">
                     <Navbar.Brand href="#home">

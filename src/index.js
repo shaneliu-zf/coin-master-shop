@@ -8,6 +8,7 @@ import Login from './login';
 import Register from './register';
 import About from './about';
 import Product from './product';
+import Coin from './coin';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +17,8 @@ root.render(
     {/* <Login /> */}
     {/* <Register /> */}
     {/* <About /> */}
-    <Product />
+    {/* <Product /> */}
+    <Coin />
   </React.StrictMode>
 );
 

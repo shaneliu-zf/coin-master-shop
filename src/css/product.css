@@ -24,8 +24,6 @@
     transition-duration: .5s;
 }
 
-.test {
-    /* background-color: aqua; */
-    background-position: 30%;
+.product_page {
     background: url('../image/product_bg.jpg') top no-repeat fixed;
 }
