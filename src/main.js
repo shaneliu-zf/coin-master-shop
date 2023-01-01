@@ -24,7 +24,7 @@ class Main extends React.Component {
             <div>
                 {/* Navbar on the top ----------------------------*/}
                 <Navbar className='navbar' bg='dark' expand='lg' collapseOnSelect variant="dark">
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand href="/home">
                         <div className='logo'>
                             <div>
                                 <img src={title} height='100%' width='100%' />
@@ -37,11 +37,11 @@ class Main extends React.Component {
                     <Navbar.Collapse className='hamburger' >
                         <Nav className="ms-auto" >
                             <Nav.Link></Nav.Link>
-                            <Nav.Link href="#home" className='nav_title'>home</Nav.Link>
-                            <Nav.Link href="#about" className='nav_title'>about</Nav.Link>
-                            <Nav.Link href="#grade" className='nav_title'>grade</Nav.Link>
-                            <Nav.Link href="#product" className='nav_title'>product</Nav.Link>
-                            <Nav.Link href="#cart" className='nav_title'>cart</Nav.Link>
+                            <Nav.Link href="/home" className='nav_title'>home</Nav.Link>
+                            <Nav.Link href="/about" className='nav_title'>about</Nav.Link>
+                            <Nav.Link href="/grade" className='nav_title'>grade</Nav.Link>
+                            <Nav.Link href="/product" className='nav_title'>product</Nav.Link>
+                            <Nav.Link href="/cart" className='nav_title'>cart</Nav.Link>
                             <Nav.Link></Nav.Link>
                             <MDBCol md="6" className='center t'>
                                 <input className="form-control" type="text" placeholder="Search" aria-label="Search" />
