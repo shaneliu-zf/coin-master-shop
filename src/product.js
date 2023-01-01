@@ -1,13 +1,11 @@
 import React from 'react';
-import { Container, Row, Col, Nav, Navbar, Button } from 'react-bootstrap'
-import { MDBCol } from "mdbreact";
+import { Container, Row, Col, Button } from 'react-bootstrap'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import './css/style.css'
 import './css/product.css'
 
-import title from './image/title.png'
 import md1885 from './image/1885md.jpg'
 import msd1896 from './image/1896msd.jpg'
 import bhd1897 from './image/1897bhd.jpg'
@@ -22,9 +20,6 @@ import khd1979 from './image/1979khd.jpg'
 import ke2019 from './image/2019ke.jpg'
 import lwhd1945 from './image/1945lwhd.jpg'
 import USAusds from './image/USAusds.jpg'
-
-
-
 
 class Product extends React.Component {
     constructor(props) {

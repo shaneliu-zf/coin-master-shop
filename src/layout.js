@@ -1,15 +1,15 @@
-import {Col, Container, Nav, Navbar, Row} from "react-bootstrap";
+import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 import title from "./image/title.png";
-import {MDBCol} from "mdbreact";
+import { MDBCol } from "mdbreact";
 import React from "react";
 import { Routes, Route, Outlet, Link, useParams, useSearchParams } from "react-router-dom";
 
 import './css/style.css'
 
-function Layout(){
+function Layout() {
     return (
         <div>
-            <Navbar className='navbar' bg='dark' expand='lg' collapseOnSelect variant="dark">
+            <Navbar id='n_coin' expand='lg' variant="dark">
                 <Navbar.Brand href="/home">
                     <div className='logo'>
                         <div>
@@ -39,15 +39,15 @@ function Layout(){
                 </Container>
             </Navbar>
             <Outlet />
-            <footer>
+            <footer >
                 <Row>
-                    <Col sm={12} md={6} className='footer_item center'>
+                    <Col sm={12} md={6} className='footer_item center x' id='f_inner'>
                         <div>
                             <img src={title} height='100%' width='100%' />
                         </div>
                     </Col>
 
-                    <Col sm={12} md={6} className='footer_item'>
+                    <Col sm={12} md={6} className='footer_item' id='f_inner'>
                         <h4>e-mail</h4>
                         <p>
                             t110590002@ntut.org.tw<br></br>
@@ -63,7 +63,6 @@ function Layout(){
                         <hr className='hr_white'></hr>
                         <p>© 2022</p>
                     </Col>
-
                 </Row>
             </footer>
         </div>

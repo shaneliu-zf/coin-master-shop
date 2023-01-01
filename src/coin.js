@@ -1,13 +1,11 @@
 import React from 'react';
-import { Container, Row, Col, Nav, Navbar, Button } from 'react-bootstrap'
-import { MDBCol } from "mdbreact";
+import { Row, Col, Button } from 'react-bootstrap'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import './css/style.css'
 import './css/coin.css'
 
-import title from './image/title.png'
 import md1885 from './image/1885md.jpg'
 import md1885_2 from './image/1885md2.jpg'
 
@@ -19,7 +17,6 @@ class Coin extends React.Component {
     render() {
         return (
             <div >
-
                 <div className='coin_bg coin_page'>
                     <Row>
                         <Col sm={12} md={3}>
@@ -112,7 +109,6 @@ class Coin extends React.Component {
                         </Col>
                     </Row>
                 </div>
-
             </div>
         )
     }

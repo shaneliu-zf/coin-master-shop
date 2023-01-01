@@ -1,10 +1,8 @@
 import { Carousel, CarouselItem, Col, Container, Nav, Navbar, Row } from "react-bootstrap";
-import title from "./image/title.png";
-import { MDBCol } from "mdbreact";
 import carousel01 from "./image/carousel01.png";
 import carousel02 from "./image/carousel02.png";
 import carousel03 from "./image/carousel03.png";
-import coin from "./image/coin.png";
+import each from "./image/each.png";
 import React from "react";
 
 import './css/style.css'
@@ -84,7 +82,7 @@ function Main() {
                         <div className='arrival_item'>
                             <Row>
                                 <Col sm={12}>
-                                    <img src={coin} width='100%' />
+                                    <img src={each} width='100%' />
                                 </Col>
 
                                 <Col>
@@ -104,7 +102,7 @@ function Main() {
                         <div className='arrival_item'>
                             <Row>
                                 <Col sm={12}>
-                                    <img src={coin} width='100%' />
+                                    <img src={each} width='100%' />
                                 </Col>
 
                                 <Col>
@@ -123,7 +121,7 @@ function Main() {
                         <div className='arrival_item'>
                             <Row>
                                 <Col sm={12}>
-                                    <img src={coin} width='100%' />
+                                    <img src={each} width='100%' />
                                 </Col>
 
                                 <Col>
@@ -142,9 +140,6 @@ function Main() {
             </Container>
         </div >
     );
-
-
-
 }
 
 export default Main;

@@ -48,7 +48,6 @@ class Login extends React.Component {
                     </Container>
                 </Navbar>
 
-
                 <Row className='member'>
                     <Col sm={12} md={6}></Col>
                     <Col sm={12} md={6}>
@@ -116,7 +115,6 @@ class Login extends React.Component {
                             <hr className='hr_white'></hr>
                             <p>© 2022</p>
                         </Col>
-
                     </Row>
                 </footer>
             </div>
