@@ -13,7 +13,7 @@ export function GetNotSoldItems() {
     const [ansList, setAnsList] = useState([]);
 
     useEffect(() => {
-        setAnsList(Object.entries(coinlist).filter(
+        setAnsList(Object.entries(coin_list).filter(
             ([key, value]) => (value['sold'] === false)))
     })
     return ansList
@@ -24,7 +24,7 @@ export function GetItemOrFalse(item_id) {
      * 回傳商品json
      * 如果sold為true，則回傳False
      */
-    let coinlist = GetDatas({ path: "items" })
+    let coin_list = GetDatas({ path: "items" })
     const [ansList, setAnsList] = useState(false);
 
     useEffect(() => {
