@@ -1,8 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5379439f-0405-4d8f-a9ac-9e14b752dd7e" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/function.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/admin-page/item_upload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/admin-page/trade.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/about.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/normal-page/about.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/normal-page/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/coin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/normal-page/coin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/function.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/function/function.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/grade.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/normal-page/grade.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/normal-page/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin-page/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/normal-page/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/normal-page/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/admin-page/register.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,15 +52,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/normal-page" />
+      <recent name="$PROJECT_DIR$/src/admin-page" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/function" />
+      <recent name="$PROJECT_DIR$/src/backend" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
@@ -52,6 +84,7 @@
       <updated>1672502910678</updated>
       <workItem from="1672502914371" duration="6000" />
       <workItem from="1672504139201" duration="252000" />
+      <workItem from="1672587452119" duration="6860000" />
     </task>
     <servers />
   </component>

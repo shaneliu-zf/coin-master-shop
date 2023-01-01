@@ -1,11 +1,9 @@
 @charset "utf-8";
 
 .coin_page {
-    /* padding-left: 10%; */
     background-image: url("../image/coin.png");
     background-size: cover;
     background-repeat: no-repeat;
-    /* background: url('../image/coin.png') no-repeat fixed; */
     background-color: #efefef;
 }
 
