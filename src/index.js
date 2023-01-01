@@ -26,6 +26,7 @@ root.render(
       <Routes>
           <Route path="/" element={<Layout/>}>
               <Route index element={<Main />}/>
+              <Route path="home" element={<Main />}/>
               <Route path="about" element={<About />} />
               <Route path="product" element={<Product />} />
               <Route path="cart" element={<Cart />} />
