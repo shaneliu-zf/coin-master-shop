@@ -12,10 +12,12 @@ import { BrowserRouter } from "react-router-dom";
 import Layout from "./layout";
 import Main from "./main";
 
+import Cart from "./cart";
+import Grade from "./grade";
+
 import Login from './login';
 import Register from './register';
 import Coin from './coin';
-import Cart from "./cart";
 import About from './about';
 import Product from './product';
 
@@ -29,6 +31,7 @@ root.render(
               <Route path="home" element={<Main />}/>
               <Route path="about" element={<About />} />
               <Route path="product" element={<Product />} />
+              <Route path="Grade" element={<Grade />} />
               <Route path="cart" element={<Cart />} />
               <Route path="login" element={<Login />} />
               <Route path="Register" element={<Register />} />
