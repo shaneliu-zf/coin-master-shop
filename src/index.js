@@ -12,10 +12,12 @@ import { BrowserRouter } from "react-router-dom";
 import Layout from "./layout";
 import Main from "./main";
 
+import Cart from "./cart";
+import Grade from "./grade";
+
 import Login from './login';
 import Register from './register';
 import Coin from './coin';
-import Cart from "./cart";
 import About from './about';
 import Product from './product';
 
