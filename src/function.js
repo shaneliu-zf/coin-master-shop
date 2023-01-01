@@ -2,7 +2,7 @@ import { child, push, ref, update } from 'firebase/database';
 import React, { useEffect, useState } from 'react';
 import { database } from './backend/databaseCtl/firebase';
 import GetDatas from "./backend/databaseCtl/getData";
-import { ChangeData, databaseInputWithHash } from './backend/databaseCtl/setData';
+import { ChangeData, databaseInputWithHash, DeleteData } from './backend/databaseCtl/setData';
 
 export function GetNotSoldItems() {
     /*
@@ -107,22 +107,57 @@ function addToCart(customer_id, item_id) {
      *
      *
      * */
+    let cartlist = GetDatas({ path: "cart" })
+    useEffect(() => {
+        Object.entries(cartlist).map(
+            ([key, value]) => {
+                if (value['customer_id'] == customer_id) {
+                    databaseInputWithHash('cart/' + key + 'items', item_id)
+                }
+            }
+        )
+    })
 }
 
-function removeFromCart(customer_id, item_id) {
+export function removeFromCart(customer_id, item_id) {
     /*
      * 把物品從顧客的購物車移除
      *
      * */
+    let cartlist = GetDatas({ path: "cart" })
+    const [ansList, setAnsList] = useState([]);
+
+    useEffect(() => {
+        Object.entries(cartlist).map(
+            ([key, value]) => {
+                if (value['customer_id'] == customer_id) {
+                    DeleteData('/cart/' + key + '/items/' + item_id)
+                }
+            }
+        )
+    })
+    //DeleteData()
 }
 
 
-function getCart(customer_id) {
+export function getCart(customer_id) {
     /*
      * 回傳商品陣列
      *
      * */
-    //return GetDatas({path:'/Cart'})
+    let cartlist = GetDatas({ path: "cart" })
+    const [ansList, setAnsList] = useState([]);
+
+    useEffect(() => {
+        Object.entries(cartlist).map(
+            ([key, value]) => {
+                if (value['customer_id'] == customer_id) {
+                    setAnsList(value['items'])
+                }
+            }
+        )
+    })
+    return ansList
 
 }
 
