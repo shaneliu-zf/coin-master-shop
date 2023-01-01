@@ -1,3 +1,4 @@
+import { type } from '@testing-library/user-event/dist/type';
 import { child, push, ref, update } from 'firebase/database';
 import React, { useEffect, useState } from 'react';
 import { database } from './backend/databaseCtl/firebase';
@@ -10,25 +11,12 @@ export function GetNotSoldItems() {
      */
     let coinlist = GetDatas({ path: "items" })
     const [ansList, setAnsList] = useState([]);
+
     useEffect(() => {
-        Object.entries(coinlist).map(
-            ([key, value]) => {
-                //console.log(value['sold'])
-                Object.entries(value).map(
-                    ([key1, value1]) => {
-                        if (key1 == "sold" && value1 == false) {
-                            setAnsList(value)
-
-                        }
-
-                    });
-            }
-        )
-
+        setAnsList(Object.entries(coinlist).filter(
+            ([key, value]) => (value['sold'] === false)))
     })
     return ansList
-
-
 }
 
 export function GetItemOrFalse(item_id) {
@@ -37,19 +25,16 @@ export function GetItemOrFalse(item_id) {
      * 如果sold為true，則回傳False
      */
     let coinlist = GetDatas({ path: "items" })
-    const [ansList, setAnsList] = useState([]);
+    const [ansList, setAnsList] = useState(false);
 
     useEffect(() => {
         Object.entries(coinlist).map(
             ([key, value]) => {
-                if (value['item_id'] == item_id && value['sold'] == false) {
+                if (value['item_id'] === item_id && value['sold'] == false) {
                     setAnsList(value)
-                } else {
-                    setAnsList(false)
                 }
             }
         )
-        //ItemSold(item_id)
     })
 
     return ansList
@@ -100,7 +85,7 @@ export function AddTrade(new_trade) {
 }
 
 
-function addToCart(customer_id, item_id) {
+export function AddToCart(customer_id, item_id) {
     /*
      * 把物品加入顧客的購物車
      *
@@ -112,14 +97,14 @@ function addToCart(customer_id, item_id) {
         Object.entries(cartlist).map(
             ([key, value]) => {
                 if (value['customer_id'] == customer_id) {
-                    databaseInputWithHash('cart/' + key + 'items', item_id)
+                    ChangeData('/cart/' + key + '/items/' + item_id, '')
                 }
             }
         )
     })
 }
 
-export function removeFromCart(customer_id, item_id) {
+export function RemoveFromCart(customer_id, item_id) {
     /*
      * 把物品從顧客的購物車移除
      *
@@ -140,7 +125,7 @@ export function removeFromCart(customer_id, item_id) {
 }
 
 
-export function getCart(customer_id) {
+export function GetCart(customer_id) {
     /*
      * 回傳商品陣列
      *
