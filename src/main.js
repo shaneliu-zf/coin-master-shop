@@ -11,7 +11,7 @@ import carousel01 from './image/carousel01.png'
 import carousel02 from './image/carousel02.png'
 import carousel03 from './image/carousel03.png'
 import title from './image/title.png'
-import coin from './image/coin.png'
+import each from './image/each.png'
 
 
 class Main extends React.Component {
@@ -126,7 +126,7 @@ class Main extends React.Component {
                             <div className='arrival_item'>
                                 <Row>
                                     <Col sm={12}>
-                                        <img src={coin} width='100%' />
+                                        <img src={each} width='100%' />
                                     </Col>
 
                                     <Col>
@@ -146,7 +146,7 @@ class Main extends React.Component {
                             <div className='arrival_item'>
                                 <Row>
                                     <Col sm={12}>
-                                        <img src={coin} width='100%' />
+                                        <img src={each} width='100%' />
                                     </Col>
 
                                     <Col>
@@ -165,7 +165,7 @@ class Main extends React.Component {
                             <div className='arrival_item'>
                                 <Row>
                                     <Col sm={12}>
-                                        <img src={coin} width='100%' />
+                                        <img src={each} width='100%' />
                                     </Col>
 
                                     <Col>
