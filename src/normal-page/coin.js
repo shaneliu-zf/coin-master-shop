@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Row, Col, Button } from 'react-bootstrap'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,9 +9,41 @@ import '../css/coin.css'
 import md1885 from '../image/1885md.jpg'
 import md1885_2 from '../image/1885md2.jpg'
 import {useParams} from "react-router-dom";
+import {getItemOrFalse} from "../function/function";
+import {GetCustomerCount} from "../function/function";
 
-function Coin(){
+export default function Coin(){
     let { coin_id } = useParams();
+    let [coin,setData] = useState();
+
+    useEffect(()=>{
+        const getData = async () => {
+            const a = getItemOrFalse(coin_id);
+            setData(await a);
+        }
+        getData();
+    },[]);
+
+    if(coin===undefined){
+        coin = {
+            "item_id"      : "???",
+            "name"         : "???",
+            "price"        : "???",
+            "category"     : "???",
+            "grade"        : "???",
+            "year"         : "???",
+            "size"         : "???",
+            "weight"       : "???",
+            "front_image"  : "???",
+            "back_image"   : "???",
+            "link"         : "???",
+            "like"         : "???",
+            "sold"         : "???"
+        };
+    }
+    else{
+        console.log(coin);
+    }
 
     return (
             <div>
@@ -21,13 +53,13 @@ function Coin(){
                             <Row className='center blue_word'>
                                 <Col sm={12}>
                                     <div className='center'>
-                                        <img src={md1885} width='90%' />
+                                        <img src={coin["front_image"]} width='90%' />
                                     </div>
                                     <p className='center'>obverse</p>
                                 </Col>
                                 <Col sm={12}>
                                     <div className='center'>
-                                        <img src={md1885_2} width='90%' />
+                                        <img src={coin["back_image"]} width='90%' />
                                     </div>
                                     <p className='center'>reverse</p>
                                 </Col>
@@ -37,7 +69,7 @@ function Coin(){
                         <Col sm={12} md={1}></Col>
                         <Col sm={12} md={8}>
                             <h1 className='yellow_word'>
-                                1885-O Morgan Dollar MS67 NGC
+                                {coin["name"]}
                             </h1>
                             <br></br><br></br>
                             <Row className='blue_word'>
@@ -45,15 +77,21 @@ function Coin(){
                                     <h5>Price</h5>
                                 </Col>
                                 <Col sm={8} md={8}>
-                                    ???
+                                    {coin["price"]} NTD
                                 </Col>
                                 <Col sm={12}><br></br></Col>
-
+                                <Col sm={4}>
+                                    <h5>Category</h5>
+                                </Col>
+                                <Col sm={8}>
+                                    <a href={"/category/"+coin["category"]}>{coin["category"]}</a>
+                                </Col>
+                                <Col sm={12}><br></br></Col>
                                 <Col sm={4}>
                                     <h5>Grade</h5>
                                 </Col>
                                 <Col sm={8}>
-                                    ???
+                                    <a href="/grade">{coin["grade"]}</a>
                                 </Col>
                                 <Col sm={12}><br></br></Col>
 
@@ -61,7 +99,7 @@ function Coin(){
                                     <h5>Year</h5>
                                 </Col>
                                 <Col sm={8}>
-                                    ???
+                                    {coin["year"]}
                                 </Col>
                                 <Col sm={12}><br></br></Col>
 
@@ -69,7 +107,7 @@ function Coin(){
                                     <h5>Size</h5>
                                 </Col>
                                 <Col sm={8}>
-                                    ???
+                                    {coin["size"]}
                                 </Col>
                                 <Col sm={12}><br></br></Col>
 
@@ -77,7 +115,7 @@ function Coin(){
                                     <h5>Weight</h5>
                                 </Col>
                                 <Col sm={8}>
-                                    ???
+                                    {coin["weight"]}
                                 </Col>
                                 <Col sm={12}><br></br></Col>
 
@@ -85,7 +123,7 @@ function Coin(){
                                     <h5>Link</h5>
                                 </Col>
                                 <Col sm={8}>
-                                    ???
+                                    <a href={coin["link"]}>{coin["link"]}</a>
                                 </Col>
                                 <Col sm={12}><br></br></Col>
 
@@ -93,10 +131,9 @@ function Coin(){
                                     <h5>Like</h5>
                                 </Col>
                                 <Col sm={8}>
-                                    ???
+                                    {coin["like"]}
                                 </Col>
                             </Row>
-
                             <br></br>
                             <div className='center'>
                                 <Button className='button_blue' >
@@ -110,5 +147,3 @@ function Coin(){
             </div>
     );
 }
-
-export default Coin;

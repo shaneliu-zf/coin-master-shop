@@ -1,31 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
-import GetDatas from './backend/databaseCtl/getData';
-import { AddItem, CustomerCountAddOne, GetCustomerCount, GetItemOrFalse, GetNotSoldItems, ItemSold } from './function/function';
-import SetCoin from './backend/databaseCtl/setCoin';
-import { type } from '@testing-library/user-event/dist/type';
 
-function App() {
-  let data = GetCart(0)
+import {getItemOrFalse, getNotSoldItems} from "./function/function";
+import React, { useEffect, useState } from 'react';
 
-  return (
-    <div className="App">
-      {/* {Object.entries(data).map(
-        ([key, value]) => <p>{key}: {value}</p>
-      )} */}
-      {/* {
-        Object.entries(notSoldItems).map(
-          ([key, value]) => <p>{key}: {value}</p>
-        )
-      } */}
-      {
-        Object.entries(data).map(
-          ([key, value]) => <p>{key}: {value}</p>
-        )
-      }
-      <SetCoin />
-    </div>
-  );
+import GetData from "./backend/databaseCtl/getData";
+
+function App(){
+    let [data,setData] = useState();
+
+    useEffect(()=>{
+        const getData = async () => {
+            const a = getItemOrFalse(0);
+            setData(await a);
+        }
+        getData();
+    },[]);
+
+    if(data===undefined){
+        return(<div></div>);
+    }
+    else{
+        console.log(data);
+    }
+
+    return (
+        <div>
+            {data["name"]}
+        </div>
+    );
 }
 
 export default App;

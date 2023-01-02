@@ -21,6 +21,7 @@ import Product from './normal-page/product';
 import Trade from "./admin-page/trade";
 import ItemUpload from "./admin-page/item_upload";
 import Login from './admin-page/login';
+import App from "./App";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -42,6 +43,7 @@ root.render(
                     <Route path="coin">
                         <Route path=":coin_id" element={<Coin />} />
                     </Route>
+                    <Route path="test" element={<App />} />
                     <Route path="*" element={<NoMatch />} />
                 </Route>
             </Routes>

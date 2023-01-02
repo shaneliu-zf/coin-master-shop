@@ -1,45 +1,35 @@
 import { type } from '@testing-library/user-event/dist/type';
-import { child, push, ref, update } from 'firebase/database';
+import {child, getDatabase, push, get,ref, update} from 'firebase/database';
 import React, { useEffect, useState } from 'react';
 import { database } from '../backend/databaseCtl/firebase';
-import GetDatas from "../backend/databaseCtl/getData";
+import GetData from "../backend/databaseCtl/getData";
 import { ChangeData, databaseInputWithHash, DeleteData } from '../backend/databaseCtl/setData';
+import {forEach} from "react-bootstrap/ElementChildren";
 
-export function GetNotSoldItems() {
-    /*
-     * 回傳未被賣掉的商品陣列
-     */
-    let coin_list = GetDatas({ path: "items" })
-    const [ansList, setAnsList] = useState([]);
 
-    useEffect(() => {
-        setAnsList(Object.entries(coin_list).filter(
-            ([key, value]) => (value['sold'] === false)))
-    })
-    return ansList
+
+export async function getNotSoldItems(){
+    let coin_list = [];
+    let snapshot = await get(child(ref(getDatabase()), '/items/'));
+    if (snapshot.exists()) {
+        let coins = Object.values(snapshot.val());
+        coins.forEach((coin) => {
+            if (coin['sold'] === false) {
+                coin_list.push(coin);
+            }
+        });
+    }
+    return coin_list;
 }
 
-export function GetItemOrFalse(item_id) {
-    /*
-     * 回傳商品json
-     * 如果sold為true，則回傳False
-     */
-    let coin_list = GetDatas({ path: "items" })
-    const [ansList, setAnsList] = useState(false);
-
-    useEffect(() => {
-        Object.entries(coin_list).map(
-            ([key, value]) => {
-                if (value['item_id'] === item_id && value['sold'] === false) {
-                    setAnsList(value)
-                }
-            }
-        )
-    })
-
-    return ansList
-
-
+export async function getItemOrFalse(item_id){
+    const coin_list = await getNotSoldItems();
+    for(let i = 0; i < coin_list.length; i++){
+        if (coin_list[i]['item_id'] == item_id){
+            return coin_list[i];
+        }
+    }
+    return false;
 }
 
 
@@ -47,7 +37,7 @@ export function ItemSold(item_id) {
     /*
      * 修改商品的sold成true
      */
-    let coin_list = GetDatas({ path: "items" })
+    let coin_list = GetData({ path: "items" })
     const [ansList, setAnsList] = useState([]);
 
     useEffect(() => {
@@ -67,7 +57,7 @@ export function ItemSold(item_id) {
 }
 
 
-export function AddItem(new_item) {
+export function AddItem(new_item){
     //new_item為商品json
     /*
      * 在資料庫新增新的商品
@@ -92,7 +82,7 @@ export function AddToCart(customer_id, item_id) {
      *
      *
      * */
-    let cartlist = GetDatas({ path: "cart" })
+    let cartlist = GetData({ path: "cart" })
     useEffect(() => {
         Object.entries(cartlist).map(
             ([key, value]) => {
@@ -109,7 +99,7 @@ export function RemoveFromCart(customer_id, item_id) {
      * 把物品從顧客的購物車移除
      *
      * */
-    let cartlist = GetDatas({ path: "cart" })
+    let cartlist = GetData({ path: "cart" })
     const [ansList, setAnsList] = useState([]);
 
     useEffect(() => {
@@ -130,7 +120,7 @@ export function GetCart(customer_id) {
      * 回傳商品陣列
      *
      * */
-    let cartlist = GetDatas({ path: "cart" })
+    let cartlist = GetData({ path: "cart" })
     const [ansList, setAnsList] = useState([]);
 
     useEffect(() => {
@@ -147,17 +137,17 @@ export function GetCart(customer_id) {
 }
 
 
-export function GetCustomerCount() {
+export function GetCustomerCount(){
     /*
      * 回傳customer_count
      */
-    return parseInt(GetDatas({ path: '/customer_count' }))
+    return parseInt(GetData({ path: '/customer_count' }))
 }
 export function CustomerCountAddOne() {
     /*
      * 把資料庫的customer_count加1
      */
-    let tmp = GetDatas({ path: '/customer_count' })
+    let tmp = GetData({ path: '/customer_count' })
     if (typeof (tmp) === typeof (1)) {
         ChangeData('/customer_count', (tmp + 1))
     }
@@ -193,7 +183,7 @@ export function getCustomerIdOrFalse() {
 }
 
 
-export function newVisit() {
+export function newVisit(){
     if (getCustomerIdOrFalse() === false) {
         console.log("new visit");
         okYourAreNewVisitor();
@@ -206,5 +196,9 @@ export function newVisit() {
 
 export function okYourAreNewVisitor() {
     CustomerCountAddOne();
-    document.cookie = 'user=' + (GetCustomerCount() * 17);
+    let a = GetCustomerCount();
+    console.log(a);
+    let s = 'user=' + (GetCustomerCount() * 17);
+    console.log(s);
+    document.cookie = s;
 }
