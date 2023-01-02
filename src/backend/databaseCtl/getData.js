@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { database } from './firebase'
 import { ref, push, child, update, query, getDatabase, limitToLast, onValue } from "firebase/database";
 
-function GetData(props){
+async function GetData(props) {
     const [data, setData] = useState([]);
     useEffect(() => {
         const recentPostsRef = query(ref(getDatabase()));

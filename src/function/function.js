@@ -1,14 +1,14 @@
 import { type } from '@testing-library/user-event/dist/type';
-import {child, getDatabase, push, get,ref, update} from 'firebase/database';
+import { child, getDatabase, push, get, ref, update } from 'firebase/database';
 import React, { useEffect, useState } from 'react';
 import { database } from '../backend/databaseCtl/firebase';
 import GetData from "../backend/databaseCtl/getData";
 import { ChangeData, databaseInputWithHash, DeleteData } from '../backend/databaseCtl/setData';
-import {forEach} from "react-bootstrap/ElementChildren";
+import { forEach } from "react-bootstrap/ElementChildren";
 
 
 
-export async function getNotSoldItems(){
+export async function getNotSoldItems() {
     let coin_list = [];
     let snapshot = await get(child(ref(getDatabase()), '/items/'));
     if (snapshot.exists()) {
@@ -22,10 +22,10 @@ export async function getNotSoldItems(){
     return coin_list;
 }
 
-export async function getItemOrFalse(item_id){
+export async function getItemOrFalse(item_id) {
     const coin_list = await getNotSoldItems();
-    for(let i = 0; i < coin_list.length; i++){
-        if (coin_list[i]['item_id'] == item_id){
+    for (let i = 0; i < coin_list.length; i++) {
+        if (coin_list[i]['item_id'] == item_id) {
             return coin_list[i];
         }
     }
@@ -33,121 +33,115 @@ export async function getItemOrFalse(item_id){
 }
 
 
-export function ItemSold(item_id) {
+export async function ItemSold(item_id) {
     /*
      * 修改商品的sold成true
      */
-    let coin_list = GetData({ path: "items" })
-    const [ansList, setAnsList] = useState([]);
+    let snapshot = await get(child(ref(getDatabase()), '/items/'));
 
-    useEffect(() => {
-        Object.entries(coin_list).map(
+    console.log(snapshot.val())
+    if (snapshot.exists()) {
+        Object.entries(snapshot.val()).map(
             ([key, value]) => {
-                if (value['item_id'] === item_id && value['sold'] === false) {
+                if (value['item_id'] + '' === item_id + '') {
                     const updates = {};
                     updates['/items/' + key + '/sold'] = true;
                     update(ref(database), updates);
-                    setAnsList(value)
                 }
+
             }
         )
-    })
-    return ansList
+    }
 
 }
 
 
-export function AddItem(new_item){
+export async function AddItem(itemName, new_item) {
     //new_item為商品json
     /*
      * 在資料庫新增新的商品
      */
-    databaseInputWithHash('items', new_item)
+    ChangeData('/items/' + itemName, new_item)
 }
 
 
-export function AddTrade(new_trade) {
+export async function AddTrade(tradeName, new_trade) {
     //new_item為交易json
     /*
      * 在資料庫新增新的交易流水
      */
-    databaseInputWithHash('trade', new_trade)
+    ChangeData('/trade/' + tradeName, new_trade)
 }
 
 
-export function AddToCart(customer_id, item_id) {
+export async function AddToCart(customer_id, item_id) {
     /*
      * 把物品加入顧客的購物車
      *
      *
      *
      * */
-    let cartlist = GetData({ path: "cart" })
-    useEffect(() => {
-        Object.entries(cartlist).map(
-            ([key, value]) => {
-                if (value['customer_id'] == customer_id) {
-                    ChangeData('/cart/' + key + '/items/' + item_id, '')
-                }
+    let cartlist = await (await get(child(ref(getDatabase()), '/cart/'))).val();
+    Object.entries(cartlist).map(
+        ([key, value]) => {
+            if (value['customer_id'] == customer_id) {
+                ChangeData('/cart/' + key + '/items/' + item_id, '')
             }
-        )
-    })
+        }
+    )
 }
 
-export function RemoveFromCart(customer_id, item_id) {
+export async function RemoveFromCart(customer_id, item_id) {
     /*
      * 把物品從顧客的購物車移除
      *
      * */
-    let cartlist = GetData({ path: "cart" })
-    const [ansList, setAnsList] = useState([]);
+    let cartlist = await (await get(child(ref(getDatabase()), '/cart/'))).val();
 
-    useEffect(() => {
-        Object.entries(cartlist).map(
-            ([key, value]) => {
-                if (value['customer_id'] === customer_id) {
-                    DeleteData('/cart/' + key + '/items/' + item_id)
-                }
+    Object.entries(cartlist).map(
+        ([key, value]) => {
+            if (value['customer_id'] === customer_id) {
+                DeleteData('/cart/' + key + '/items/' + item_id)
             }
-        )
-    })
-    //DeleteData()
+        }
+    )
 }
 
 
-export function GetCart(customer_id) {
+export async function GetCart(customer_id) {
     /*
      * 回傳商品陣列
      *
      * */
-    let cartlist = GetData({ path: "cart" })
-    const [ansList, setAnsList] = useState([]);
-
-    useEffect(() => {
-        Object.entries(cartlist).map(
+    let cartlist = await get(child(ref(getDatabase()), '/cart/'))
+    let ans = {};
+    if (cartlist.exists()) {
+        Object.entries(cartlist.val()).map(
             ([key, value]) => {
                 if (value['customer_id'] === customer_id) {
-                    setAnsList(value['items'])
+                    ans = value['items']
                 }
             }
         )
-    })
-    return ansList
-
+    }
+    return ans
 }
 
 
-export function GetCustomerCount(){
+export async function GetCustomerCount() {
     /*
      * 回傳customer_count
      */
-    return parseInt(GetData({ path: '/customer_count' }))
+    let CustomerCount = await get(child(ref(getDatabase()), '/customer_count/'));
+    console.log(CustomerCount.val())
+    return parseInt(CustomerCount.val())
 }
-export function CustomerCountAddOne() {
+export async function CustomerCountAddOne() {
     /*
      * 把資料庫的customer_count加1
      */
-    let tmp = GetData({ path: '/customer_count' })
+    let tmp = await GetCustomerCount()
+    console.log(tmp)
     if (typeof (tmp) === typeof (1)) {
         ChangeData('/customer_count', (tmp + 1))
     }
@@ -183,7 +177,7 @@ export function getCustomerIdOrFalse() {
 }
 
 
-export function newVisit(){
+export function newVisit() {
     if (getCustomerIdOrFalse() === false) {
         console.log("new visit");
         okYourAreNewVisitor();

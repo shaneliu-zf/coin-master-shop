@@ -2,7 +2,7 @@ import { child, push, ref, update } from "firebase/database";
 import { database } from "./firebase";
 
 
-export function databaseInputWithHash(type, new_item) {
+export async function databaseInputWithHash(type, new_item) {
     /*
     input type and insert data
     */
@@ -16,9 +16,9 @@ export function ChangeData(path, new_value) {
     /*
     input type and insert data
     */
-    const updates = {};
-    updates[path] = new_value;
-    update(ref(database), updates);
+    update(ref(database), {
+        [path]: new_value
+    })
 }
 export function DeleteData(path) {
 
