@@ -37,7 +37,6 @@ body {
 .arrival_title {
     color: white;
     margin: 2%;
-    /* margin-bottom: 0%; */
 }
 
 .arrival_content {
@@ -51,7 +50,6 @@ body {
     background-color: #f6f4f1;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    /* margin-bottom: 5%; */
 }
 
 .item_inner {

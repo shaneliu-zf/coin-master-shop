@@ -5,7 +5,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 
-import {Routes, Route, Outlet, Link, useParams, useSearchParams, useNavigate, Navigate} from "react-router-dom";
+import { Routes, Route, Outlet, Link, useParams, useSearchParams, useNavigate, Navigate } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 
 
@@ -26,40 +26,40 @@ import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <Routes>
-                <Route path="/admin">
-                    <Route path="login" element={<Login />} />
-                    <Route path="trade" element={<Trade />} />
-                    <Route path="item_upload" element={<ItemUpload />} />
-                </Route>
-                <Route path="/" element={<Layout />}>
-                    <Route index element={<Main />} />
-                    <Route path="about" element={<About />} />
-                    <Route path="product" element={<Product />} />
-                    <Route path="grade" element={<Grade />} />
-                    <Route path="cart" element={<Cart />} />
-                    <Route path="coin">
-                        <Route path=":coin_id" element={<Coin />} />
-                    </Route>
-                    <Route path="test" element={<App />} />
-                    <Route path="*" element={<NoMatch />} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
-    </React.StrictMode>
+  <React.StrictMode>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/admin">
+          <Route path="login" element={<Login />} />
+          <Route path="trade" element={<Trade />} />
+          <Route path="item_upload" element={<ItemUpload />} />
+        </Route>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Main />} />
+          <Route path="about" element={<About />} />
+          <Route path="product" element={<Product />} />
+          <Route path="grade" element={<Grade />} />
+          <Route path="cart" element={<Cart />} />
+          <Route path="coin">
+            <Route path=":coin_id" element={<Coin />} />
+          </Route>
+          <Route path="test" element={<App />} />
+          <Route path="*" element={<NoMatch />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </React.StrictMode>
 );
 
 function NoMatch() {
   return (
     <div>
-        <br /><br /><br />
-        <h1>404</h1>
-        <h2>Nothing to see here!</h2>
-        <p>
-            <Link to="/">Go to the home page</Link>
-        </p>
+      <br /><br /><br />
+      <h1>404</h1>
+      <h2>Nothing to see here!</h2>
+      <p>
+        <Link to="/">Go to the home page</Link>
+      </p>
     </div>
   );
 }

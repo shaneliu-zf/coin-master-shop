@@ -13,3 +13,12 @@
     padding-top: 10%;
     padding-bottom: 9%;
 }
+
+.load {
+    padding: 30%;
+    background-color: #efefef;
+}
+
+.load_img {
+    filter: blur(5px);
+}

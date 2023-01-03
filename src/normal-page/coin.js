@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Button } from 'react-bootstrap'
+import { Row, Col, Button, Spinner } from 'react-bootstrap'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.js';
 import '../css/style.css'
 import '../css/coin.css'
 
+import title from "../image/title.png";
 import md1885 from '../image/1885md.jpg'
 import md1885_2 from '../image/1885md2.jpg'
+import each from '../image/each.png'
 import { useParams } from "react-router-dom";
 import { getItemOrFalse } from "../function/function";
 import { GetCustomerCount } from "../function/function";
@@ -25,22 +27,25 @@ export default function Coin() {
     }, []);
 
     if (coin === undefined) {
-        // return()
-        coin = {
-            "item_id": "???",
-            "name": "???",
-            "price": "???",
-            "category": "???",
-            "grade": "???",
-            "year": "???",
-            "size": "???",
-            "weight": "???",
-            "front_image": "???",
-            "back_image": "???",
-            "link": "???",
-            "like": "???",
-            "sold": "???"
-        };
+        return (
+            <div className='load'>
+                <Row>
+                    <Col sm={12} className='center'>
+                        <img src={title} width='80%'></img>
+                    </Col>
+                    <Col sm={12} className='center'>
+                        <br></br><br></br><br></br><br></br>
+                        <Spinner animation="border" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </Spinner>
+                    </Col>
+                    <Col sm={12} className='center'>
+                        <br></br><br></br>
+                        <h2 className='blue_word'>Loading</h2>
+                    </Col>
+                </Row>
+            </div>
+        )
     }
     else {
         console.log(coin);
