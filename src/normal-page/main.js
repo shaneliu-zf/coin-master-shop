@@ -10,134 +10,143 @@ import '../css/main.css'
 function Main() {
     return (
         <div>
-            <Carousel className='carousel_background'>
-                <CarouselItem >
-                    <Row>
-                        <Col sm={12} md={4}>
-                            <div className='carousel_item'>
-                                <h1 className='carousel_title'>
-                                    MASTER OF COINS
-                                </h1>
-                                <br></br>
-                                <p>
-                                    A website for selling ancient coins for people is
-                                    A website for selling ancient coins for people is
-                                    A website for selling ancient coins for people is
-                                </p>
-                            </div>
-                        </Col>
-                        <Col sm={12} md={8}>
-                            <img src={carousel01} width='100%' />
-                        </Col>
-                    </Row>
+            <div className=" whole_bg">
+                <Carousel className='carousel_background'>
+                    <CarouselItem>
+                        <Row>
+                            <Col sm={12} md={4}>
+                                <div className='carousel_item'>
+                                    <h1 className='carousel_title'>
+                                        MASTER OF COINS
+                                    </h1>
+                                    <br></br>
+                                    <p>
+                                        A website for selling ancient coins for people is
+                                        A website for selling ancient coins for people is
+                                        A website for selling ancient coins for people is
+                                    </p>
+                                </div>
+                            </Col>
+                            <Col sm={12} md={8}>
+                                <img src={carousel01} width='100%' />
+                            </Col>
+                        </Row>
 
-                </CarouselItem>
-                <CarouselItem>
-                    <Row>
-                        <Col sm={12} md={4}>
-                            <div className='carousel_item'>
-                                <h1 className='carousel_title'>
-                                    ANCIENT COINS
-                                </h1>
-                                <br></br>
-                                <p>
-                                    A website for selling ancient coins for people is
-                                    A website for selling ancient coins for people is
-                                    A website for selling ancient coins for people is
-                                </p>
-                            </div>
-                        </Col>
-                        <Col sm={12} md={8}>
-                            <img src={carousel02} width='100%' />
-                        </Col>
-                    </Row>
+                    </CarouselItem>
+                    <CarouselItem>
+                        <Row>
+                            <Col sm={12} md={4}>
+                                <div className='carousel_item'>
+                                    <h1 className='carousel_title'>
+                                        ANCIENT COINS
+                                    </h1>
+                                    <br></br>
+                                    <p>
+                                        A website for selling ancient coins for people is
+                                        A website for selling ancient coins for people is
+                                        A website for selling ancient coins for people is
+                                    </p>
+                                </div>
+                            </Col>
+                            <Col sm={12} md={8}>
+                                <img src={carousel02} width='100%' />
+                            </Col>
+                        </Row>
 
-                </CarouselItem>
-                <CarouselItem>
-                    <Row>
-                        <Col sm={12} md={4}>
-                            <div className='carousel_item'>
-                                <h1 className='carousel_title'>
-                                    VALUABLE COINS
-                                </h1>
-                                <br></br>
-                                <p>
-                                    A website for selling ancient coins for people is
-                                    A website for selling ancient coins for people is
-                                    A website for selling ancient coins for people is
-                                </p>
-                            </div>
-                        </Col>
-                        <Col sm={12} md={8}>
-                            <img src={carousel03} width='100%' />
-                        </Col>
-                    </Row>
-                </CarouselItem>
-            </Carousel>
+                    </CarouselItem>
+                    <CarouselItem>
+                        <Row>
+
+                            <Col sm={12} md={4}>
+                                <div className='carousel_item'>
+                                    <h1 className='carousel_title'>
+                                        VALUABLE COINS
+                                    </h1>
+                                    <br></br>
+                                    <p>
+                                        A website for selling ancient coins for people is
+                                        A website for selling ancient coins for people is
+                                        A website for selling ancient coins for people is
+                                    </p>
+                                </div>
+                            </Col>
+                            <Col sm={12} md={8}>
+                                <img src={carousel03} width='100%' />
+                            </Col>
+                        </Row>
+                    </CarouselItem>
+                </Carousel>
+            </div>
+
             {/* New Arrival---------------------------- */}
-            <Container className='arrival'>
-                <h1 className='center arrival_title'>New Arrival</h1>
-                <Row className='item_inner'>
-                    <Col sm={12} md={4}>
-                        <div className='arrival_item'>
-                            <Row>
-                                <Col sm={12}>
-                                    <img src={each} width='100%' />
-                                </Col>
+            <div class="bg">
+                <Container className='arrival'>
+                    <h1 className='center arrival_title'>New Arrival</h1>
+                    <Row className='item_inner'>
+                        <Col sm={12} md={4}>
+                            <div className='arrival_item'>
+                                <Row>
+                                    <Col sm={12}>
+                                        <img src={each} width='100%' />
+                                    </Col>
 
-                                <Col>
-                                    <hr className='hr_blue'></hr>
-                                </Col>
+                                    <Col>
+                                        <hr className='hr_blue'></hr>
+                                    </Col>
 
-                                <Col sm={12}>
-                                    <h3 className='center arrival_content'>
-                                        morgan dollars
-                                    </h3>
-                                </Col>
-                            </Row>
-                        </div>
-                    </Col>
+                                    <Col sm={12}>
 
-                    <Col sm={12} md={4}>
-                        <div className='arrival_item'>
-                            <Row>
-                                <Col sm={12}>
-                                    <img src={each} width='100%' />
-                                </Col>
+                                        <h3 className='center arrival_content'>
+                                            morgan dollars
+                                        </h3>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </Col>
 
-                                <Col>
-                                    <hr className='hr_blue'></hr>
-                                </Col>
+                        <Col sm={12} md={4}>
+                            <div className='arrival_item'>
+                                <Row>
+                                    <Col sm={12}>
+                                        <img src={each} width='100%' />
+                                    </Col>
 
-                                <Col sm={12}>
-                                    <h3 className='center arrival_content'>
-                                        morgan dollars
-                                    </h3>
-                                </Col>
-                            </Row>
-                        </div>
-                    </Col>
-                    <Col sm={12} md={4}>
-                        <div className='arrival_item'>
-                            <Row>
-                                <Col sm={12}>
-                                    <img src={each} width='100%' />
-                                </Col>
+                                    <Col>
+                                        <hr className='hr_blue'></hr>
+                                    </Col>
 
-                                <Col>
-                                    <hr className='hr_blue'></hr>
-                                </Col>
+                                    <Col sm={12}>
+                                        <h3 className='center arrival_content'>
+                                            morgan dollars
+                                        </h3>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </Col>
+                        <Col sm={12} md={4}>
+                            <div className='arrival_item'>
+                                <Row>
+                                    <Col sm={12}>
+                                        <img src={each} width='100%' />
+                                    </Col>
 
-                                <Col sm={12}>
-                                    <h3 className='center arrival_content'>
-                                        morgan dollars
-                                    </h3>
-                                </Col>
-                            </Row>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
+                                    <Col>
+                                        <hr className='hr_blue'></hr>
+                                    </Col>
+
+                                    <Col sm={12}>
+                                        <h3 className='center arrival_content'>
+                                            morgan dollars
+                                        </h3>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+
+            </div>
+
         </div >
     );
 }

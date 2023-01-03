@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+body {
+    padding-top: -200px;
+}
+
 .carousel_background {
     background-color: #efefef;
 }
@@ -14,8 +18,14 @@
     color: #454d9b;
 }
 
+.bg {
+    padding-top: 4%;
+    background-color: #efefef;
+}
+
 .arrival {
     padding: 1%;
+    padding-bottom: 0%;
     background-image: url("../image/arrival.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -27,6 +37,7 @@
 .arrival_title {
     color: white;
     margin: 2%;
+    /* margin-bottom: 0%; */
 }
 
 .arrival_content {
@@ -40,7 +51,7 @@
     background-color: #f6f4f1;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    margin-bottom: 5%;
+    /* margin-bottom: 5%; */
 }
 
 .item_inner {
