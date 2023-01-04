@@ -49,6 +49,10 @@ p {
     color: #b88e50;
 }
 
+.white_word {
+    color: white;
+}
+
 .center {
     display: flex;
     justify-content: center;

@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+.category_bg {
+    background: url('../image/category.jpg') top no-repeat fixed;
+    background-color: #efefef;
+    padding: 20%;
+    padding-top: 7%;
+    padding-bottom: 6%;
+}
+
+.category_coin {
+    padding: 3%;
+    padding-left: 7%;
+    padding-right: 7%;
+    margin-bottom: 5%;
+    background: linear-gradient(#454d9b, #222230);
+    box-shadow: 0 0.3rem 2rem rgba(0, 0, 0, 0.65);
+    border-radius: 30px;
+}
+
+.category_coin:hover {
+    padding: 5%;
+    border-radius: 60px;
+    transition-duration: .3s;
+}
+
+.category_title {
+    font-size: 50px;
+    word-break: break-all;
+}
+
+.category_content {
+    padding: 2%;
+    background-color: #efefef;
+    border-radius: 10px;
+}
