@@ -5,6 +5,7 @@ import { database } from '../backend/databaseCtl/firebase';
 import GetData from "../backend/databaseCtl/getData";
 import { ChangeData, databaseInputWithHash, DeleteData } from '../backend/databaseCtl/setData';
 import { forEach } from "react-bootstrap/ElementChildren";
+import md5 from 'md5';
 
 
 
@@ -195,4 +196,26 @@ export function okYourAreNewVisitor() {
     let s = 'user=' + (GetCustomerCount() * 17);
     console.log(s);
     document.cookie = s;
+}
+export async function Check(username, password) {
+    /*
+     * 判斷跟資料庫的使用者帳密一不一樣
+     * password使用md5儲存，所以判斷的時候吧password用md5加密再判斷
+     * */
+
+    let adminData = await get(child(ref(getDatabase()), '/admin'));
+    console.log(md5(password))
+
+    if (adminData.exists()) {
+        Object.entries(adminData.val()).map(
+            ([key, value]) => {
+                if (value['user'] === username && value['password'] === md5(password)) {
+                    return true;
+                }
+            }
+        )
+    }
+    return false;
+
+
 }
