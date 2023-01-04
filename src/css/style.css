@@ -53,6 +53,10 @@ p {
     color: white;
 }
 
+p {
+    font-size: 1.1em;
+}
+
 .center {
     display: flex;
     justify-content: center;
