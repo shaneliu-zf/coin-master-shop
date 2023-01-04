@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+.grade_bg {
+    background: url('../image/grade.jpg') top no-repeat fixed;
+    background-color: #efefef;
+    padding-top: 7%;
+    padding-bottom: 6%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.grade_content {
+    padding-bottom: 6%;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-top: 4%;
+    background-color: #efefef;
+    box-shadow: 0 0.3rem 2rem rgba(0, 0, 0, 0.65);
+    opacity: 80%;
+    border-radius: 30px;
+}
+
+.grade_title {
+    font-size: 50px;
+    word-break: break-all;
+}

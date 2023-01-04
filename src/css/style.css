@@ -49,6 +49,14 @@ p {
     color: #b88e50;
 }
 
+.white_word {
+    color: white;
+}
+
+p {
+    font-size: 1.1em;
+}
+
 .center {
     display: flex;
     justify-content: center;
@@ -128,7 +136,9 @@ p {
 
 footer {
     padding: 0%;
+    background: url('../image/footer.jpg') top no-repeat fixed;
     background-color: #222230;
+    /* opacity: 0.7; */
     color: white;
 }
 

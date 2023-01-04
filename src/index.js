@@ -17,6 +17,7 @@ import Grade from "./normal-page/grade";
 import Coin from './normal-page/coin';
 import About from './normal-page/about';
 import Product from './normal-page/product';
+import Category from './normal-page/category';
 
 import Trade from "./admin-page/trade";
 import ItemUpload from "./admin-page/item_upload";
@@ -43,6 +44,7 @@ root.render(
           <Route path="coin">
             <Route path=":coin_id" element={<Coin />} />
           </Route>
+          <Route path="category" element={<Category />} />
           <Route path="test" element={<App />} />
           <Route path="*" element={<NoMatch />} />
         </Route>
