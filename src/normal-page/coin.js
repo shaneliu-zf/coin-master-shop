@@ -143,7 +143,7 @@ export default function Coin() {
                         <br></br>
                         <div className='center'>
                             <Button className='button_blue' >
-                                add to cart
+                                add to like
                             </Button>
                         </div>
 

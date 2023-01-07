@@ -5,7 +5,7 @@ import React from "react";
 import { Routes, Route, Outlet, Link, useParams, useSearchParams } from "react-router-dom";
 
 import '../css/style.css'
-import {newVisit} from "../function/function.js"
+import { newVisit } from "../function/function.js"
 
 function Layout() {
     newVisit();
@@ -29,7 +29,7 @@ function Layout() {
                         <Nav.Link href="/about" className='nav_title'>about</Nav.Link>
                         <Nav.Link href="/grade" className='nav_title'>grade</Nav.Link>
                         <Nav.Link href="/product" className='nav_title'>product</Nav.Link>
-                        <Nav.Link href="/cart" className='nav_title'>cart</Nav.Link>
+                        <Nav.Link href="/like" className='nav_title'>like</Nav.Link>
                         <Nav.Link></Nav.Link>
                         <MDBCol md="6" className='center t'>
                             <input className="form-control" type="text" placeholder="Search" aria-label="Search" />

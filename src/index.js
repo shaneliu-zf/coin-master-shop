@@ -12,7 +12,7 @@ import { BrowserRouter } from "react-router-dom";
 import Layout from "./normal-page/layout";
 
 import Main from "./normal-page/main";
-import Cart from "./normal-page/cart";
+import Like from "./normal-page/like";
 import Grade from "./normal-page/grade";
 import Coin from './normal-page/coin';
 import About from './normal-page/about';
@@ -40,7 +40,7 @@ root.render(
           <Route path="about" element={<About />} />
           <Route path="product" element={<Product />} />
           <Route path="grade" element={<Grade />} />
-          <Route path="cart" element={<Cart />} />
+          <Route path="like" element={<Like />} />
           <Route path="coin">
             <Route path=":coin_id" element={<Coin />} />
           </Route>
