@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 .like_page {
-    background: url('../image/like.jpg');
+    /* background: url('../image/like.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -15,7 +15,7 @@
 }
 
 .each_like {
-    background-color: white;
+    background-color: #cacdd4;
     border-radius: 30px;
     padding: 2%;
     margin: 2%;

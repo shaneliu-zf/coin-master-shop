@@ -27,5 +27,6 @@
 }
 
 .product_page {
+    /* background-color: #efefef; */
     background: url('../image/product_bg.jpg') top no-repeat fixed;
 }
