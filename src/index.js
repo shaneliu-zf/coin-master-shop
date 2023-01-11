@@ -24,17 +24,20 @@ import ItemUpload from "./admin-page/item_upload";
 import Login from './admin-page/login';
 import App from "./App";
 
+import Admin_layout from "./admin-page/admin_layout";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/admin">
+          <Route path="/admin">
           <Route path="login" element={<Login />} />
-          <Route path="trade" element={<Trade />} />
-          <Route path="item_upload" element={<ItemUpload />} />
-        </Route>
+          </Route>
+            <Route path="/admin" element={<Admin_layout />}>
+              <Route path="trade" element={<Trade />} />
+              <Route path="item_upload" element={<ItemUpload />} />
+            </Route>
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
           <Route path="about" element={<About />} />
@@ -44,7 +47,9 @@ root.render(
           <Route path="coin">
             <Route path=":coin_id" element={<Coin />} />
           </Route>
-          <Route path="category" element={<Category />} />
+            <Route path="category">
+                <Route path=":category_name" element={<Category />} />
+            </Route>
           <Route path="test" element={<App />} />
           <Route path="*" element={<NoMatch />} />
         </Route>
