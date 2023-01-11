@@ -6,7 +6,9 @@ import { Routes, Route, Outlet, Link, useParams, useSearchParams } from "react-r
 
 import '../css/style.css'
 import { newVisit } from "../function/function.js"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
+import search_icon from '../image/search-icon.webp'
 function Layout() {
     newVisit();
     return (
@@ -32,9 +34,13 @@ function Layout() {
                         <Nav.Link href="/like" className='nav_title'>like</Nav.Link>
                         <Nav.Link></Nav.Link>
                         <MDBCol md="6" className='center t'>
-                            <input className="form-control" type="text" placeholder="Search" aria-label="Search" />
+                            <input id='search_input' className="form-control" type="text" placeholder="Search" aria-label="Search" />
                         </MDBCol>
-                        <Nav.Link></Nav.Link>
+                        <Nav.Link href={"/search/asd"} className='nav_title'>
+                            <div style={{borderRadius:"10px",backgroundColor:"#b88e50",padding:"3px"}}>
+                                <img src={search_icon} width={"25px"}/>
+                            </div>
+                        </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
                 <Container>
