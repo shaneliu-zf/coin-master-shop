@@ -34,11 +34,13 @@
     padding: 10px;
     border-radius: 10px;
     animation: horizontal-shaking 0.3s;
+
 }
 
 @keyframes horizontal-shaking {
     0% {
-        transform: translateX(0)
+        opacity: 0;
+        transform: translateX(0);
     }
 
     25% {
@@ -54,10 +56,9 @@
     }
 
     100% {
-        transform: translateX(0)
+        transform: translateX(0);
     }
 }
-
 
 .button_blue:hover {
     background-color: #96877b;
