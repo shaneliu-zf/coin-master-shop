@@ -1,5 +1,5 @@
 import { child, push, ref, update } from "firebase/database";
-import { GetLen } from "../../function/function";
+import { GetLen, newVisit } from "../../function/function";
 import { database } from "./firebase";
 
 
@@ -32,8 +32,10 @@ export async function ChangeDataWithId(path, new_value, Id) {
     } else {
         let tmp = -1
         tmp = await GetLen(path) + 3;
+        let tmp_value = new_value
+        tmp_value["item_id"] = tmp + ''
         update(ref(database), {
-            [path + "coin" + tmp]: new_value
+            [path + "coin" + tmp]: tmp_value
         })
     }
 }
