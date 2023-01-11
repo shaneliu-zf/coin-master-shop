@@ -14,6 +14,11 @@ function Layout(){
     function handleInput(event){
         setSearch(event.target.value);
     }
+    function handleKeyDown(event){
+        if(event.key === "Enter"){
+            window.location.href = "/search/"+search_post;
+        }
+    }
     newVisit();
     return (
         <div>
@@ -39,7 +44,7 @@ function Layout(){
                         <Nav.Link></Nav.Link>
 
                         <MDBCol md="6" className='center t'>
-                            <input onChange={handleInput} id='search_input' className="form-control" type="text" placeholder="Search" aria-label="Search" />
+                            <input onKeyDown={handleKeyDown} onChange={handleInput} id='search_input' className="form-control" type="text" placeholder="Search" aria-label="Search" />
                         </MDBCol>
                         <Nav.Link href={"/search/"+search_post} className='nav_title'>
                             <div style={{borderRadius:"10px",backgroundColor:"#b88e50",padding:"3px"}}>
