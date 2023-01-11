@@ -18,7 +18,7 @@ export default function Search_page() {
                         <input id='search_input' className="form-control" type="text" placeholder={search_post} aria-label="Search" />
                     </div>
                 </Col>
-                <div style={{ borderRadius: "10px", padding: "3px", width: "32px" }}>
+                <div style={{ borderRadius: "10px", padding: "3px", width: "32px", cursor: "pointer " }}>
                     <img src={search_icon} width={"25px"} />
                 </div>
 
