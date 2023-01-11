@@ -55,6 +55,13 @@ export default class ItemUpload extends React.Component {
                     <Row>
                         <Col sm={2}></Col>
                         <Col sm={7}>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+                            <h1>Coin!!</h1>
+                            <br></br>
+                            <br></br>
                             <Form onSubmit={this.handleSubmit} onChange={this.handleChange}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail" >
                                     <Form.Label>
@@ -173,6 +180,11 @@ export default class ItemUpload extends React.Component {
                             </Form>
                         </Col>
                     </Row>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
                 </Container>
 
             </div>
