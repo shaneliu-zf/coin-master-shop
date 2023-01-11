@@ -66,6 +66,20 @@ export async function AddItem(itemName, new_item) {
 }
 
 
+export async function GetTrade(customer_id) {
+    let tradelist = await get(child(ref(getDatabase()), '/trade/'))
+    let ans = {};
+    if (tradelist.exists()) {
+        Object.entries(tradelist.val()).map(
+            ([key, value]) => {
+                if (value['customer_id'] === customer_id) {
+                    ans = value['item_id']
+                }
+            }
+        )
+    }
+    return ans
+}
 export async function AddTrade(tradeName, new_trade) {
     //new_item為交易json
     /*
