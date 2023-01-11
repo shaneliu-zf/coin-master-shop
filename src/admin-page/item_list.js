@@ -31,6 +31,19 @@ function Item_List() {
                 <h1 className='blue_word'>
                     PRODUCT
                 </h1>
+                <hr></hr>
+                <Row>
+                    <Col sm={10}></Col>
+                    <Col sm={2}>
+                        <div></div>
+                        <Button className='button_blue' size='lg'>
+                            upload
+                        </Button>
+                    </Col>
+                    <Col sm={12}>
+                        <br></br>
+                    </Col>
+                </Row>
                 <div>
                     <Row>
                         {
@@ -68,7 +81,7 @@ function Item_List() {
                     </Row>
                 </div>
             </Container>
-        </div>
+        </div >
     );
 }
 
