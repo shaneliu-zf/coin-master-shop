@@ -31,7 +31,7 @@ export async function ChangeDataWithId(path, new_value, Id) {
         })
     } else {
         let tmp = -1
-        tmp = await GetLen(path);
+        tmp = await GetLen(path) + 3;
         update(ref(database), {
             [path + "coin" + tmp]: new_value
         })
