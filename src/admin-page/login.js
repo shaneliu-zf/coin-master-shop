@@ -7,48 +7,60 @@ import 'bootstrap/dist/js/bootstrap.js';
 import '../css/style.css'
 import '../css/client.css'
 
-import title from '../image/title.png'
-function Login(){
+function check() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    if (username === "admin" && password === "admin") {
+        return true;
+    }
+    alert("bad username or bad password");
+    return false;
+}
+function Login() {
     return (
-            <div>
-                <Row className='member'>
-                    <Col sm={12} md={6}></Col>
-                    <Col sm={12} md={6}>
-                        <div className='information'>
-                            <div className='information_bg '>
-                                <h1>LOGIN</h1>
-                                <Form>
-                                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                                        <Form.Label>
-                                            <h5>Account</h5>
-                                        </Form.Label>
-                                        <Form.Control type="email" placeholder="Enter account" />
-                                        <p>
-                                            Please enter your account to login
-                                        </p>
-                                    </Form.Group>
+        <div>
+            <Row className='member'>
+                <Col sm={12} md={6}></Col>
+                <Col sm={12} md={6}>
+                    <div className='information'>
+                        <div className='information_bg '>
+                            <h1>LOGIN</h1>
+                            <Form action={"/admin/item_list"} onSubmit={check}>
+                                <Form.Group className="mb-3" controlId="formBasicEmail">
+                                    <Form.Label>
+                                        <h5>Account</h5>
+                                    </Form.Label>
+                                    <Form.Control id="username" type="text" placeholder="Enter account" />
+                                </Form.Group>
 
-                                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                                        <Form.Label>
-                                            <h5>
-                                                Password
-                                            </h5>
-                                        </Form.Label>
-                                        <Form.Control type="password" placeholder="Password" />
-                                    </Form.Group>
+                                <Form.Group className="mb-3" controlId="formBasicPassword">
+                                    <Form.Label>
+                                        <h5>
+                                            Password
+                                        </h5>
+                                    </Form.Label>
+                                    <Form.Control id="password" type="password" placeholder="Password" />
+                                </Form.Group>
 
+                                <div className='center'>
+                                    <Button type="submit" className='button_blue'>
+                                        Login
+                                    </Button>
+                                </div>
+
+                                <div>
+                                    <hr></hr>
                                     <div className='center'>
-                                        <Button type="submit" className='button_blue'>
-                                            Login
-                                        </Button>
+                                        <span className='wrong'>Invalid username or password.</span>
                                     </div>
-                                </Form>
-                            </div>
+                                </div>
+                            </Form>
                         </div>
-                    </Col>
-                </Row>
-            </div>
-        );
+                    </div>
+                </Col>
+            </Row>
+        </div>
+    );
 }
 
 export default Login;

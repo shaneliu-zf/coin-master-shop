@@ -33,6 +33,7 @@ function Layout() {
                         <Nav.Link href="/product" className='nav_title'>product</Nav.Link>
                         <Nav.Link href="/like" className='nav_title'>like</Nav.Link>
                         <Nav.Link></Nav.Link>
+
                         <MDBCol md="6" className='center t'>
                             <input id='search_input' className="form-control" type="text" placeholder="Search" aria-label="Search" />
                         </MDBCol>

@@ -15,6 +15,8 @@
 
 .information_bg {
     padding: 6%;
+    padding-top: 25%;
+    padding-bottom: 75%;
     background-color: rgba(42, 55, 56, 0.6);
     color: white;
     border-radius: 30px;
@@ -23,6 +25,37 @@
 .button_blue {
     background-color: #ccc1b3;
     border: #ccc1b3;
+}
+
+.wrong {
+    color: white;
+    background-color: red;
+    opacity: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    animation: horizontal-shaking 0.3s;
+}
+
+@keyframes horizontal-shaking {
+    0% {
+        transform: translateX(0)
+    }
+
+    25% {
+        transform: translateX(5px)
+    }
+
+    50% {
+        transform: translateX(-5px)
+    }
+
+    75% {
+        transform: translateX(5px)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
 }
 
 
