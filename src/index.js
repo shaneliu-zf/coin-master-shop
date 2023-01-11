@@ -5,7 +5,16 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 
-import { Routes, Route, Outlet, Link, useParams, useSearchParams, useNavigate, Navigate } from "react-router-dom";
+import {
+    Routes,
+    Route,
+    Outlet,
+    Link,
+    useParams,
+    useSearchParams,
+    useNavigate,
+    Navigate,
+} from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 
 
@@ -20,13 +29,13 @@ import Product from './normal-page/product';
 import Category from './normal-page/category';
 
 import Trade from "./admin-page/trade";
-import ItemUpload from "./admin-page/item_upload";
 import Login from './admin-page/login';
-import App from "./App";
 
 import Admin_layout from "./admin-page/admin_layout";
 import {Col, Container, Row} from "react-bootstrap";
 import Search_page from "./normal-page/Search";
+import Item_List from "./admin-page/item_list";
+import Logout from "./admin-page/Logout";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -38,7 +47,8 @@ root.render(
           </Route>
             <Route path="/admin" element={<Admin_layout />}>
               <Route path="trade" element={<Trade />} />
-              <Route path="item_upload" element={<ItemUpload />} />
+              <Route path="item_list" element={<Item_List />} />
+                <Route path="logout" element={<Logout/>}/>
             </Route>
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />

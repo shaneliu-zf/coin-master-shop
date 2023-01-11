@@ -10,7 +10,7 @@ import title from "../image/title.png";
 import { getNotSoldItems } from "../function/function";
 import loading from "../loading";
 
-function Product() {
+function Item_List() {
     let [coins, setData] = useState();
 
     useEffect(() => {
@@ -75,4 +75,4 @@ function Product() {
     );
 }
 
-export default Product;
+export default Item_List;
