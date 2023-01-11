@@ -48,7 +48,7 @@ function Like() {
 
             <Row>
                 <Col sm={7}></Col>
-                <Col sm={4} className='center'>
+                <Col sm={3} className='center'>
                     <Col>
                         <div className="d-grid gap-2">
                             <Button className='button_blue' size="lg">
@@ -57,7 +57,7 @@ function Like() {
                         </div>
                     </Col>
                 </Col>
-                <Col sm={1}></Col>
+                <Col sm={2}></Col>
                 <Col sm={12}>
                     <br></br>
                 </Col>

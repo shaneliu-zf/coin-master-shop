@@ -2,9 +2,10 @@
 
 .like_page {
     /* background: url('../image/like.jpg'); */
-    background-size: cover;
+    /* background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed; */
+    background-color: #efefef;
 }
 
 .like_bg {
