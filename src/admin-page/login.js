@@ -7,7 +7,15 @@ import 'bootstrap/dist/js/bootstrap.js';
 import '../css/style.css'
 import '../css/client.css'
 
-import title from '../image/title.png'
+function check(){
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    if(username==="admin" && password==="admin"){
+        return true;
+    }
+    alert("bad username or bad password");
+    return false;
+}
 function Login(){
     return (
             <div>
@@ -17,12 +25,12 @@ function Login(){
                         <div className='information'>
                             <div className='information_bg '>
                                 <h1>LOGIN</h1>
-                                <Form>
+                                <Form action={"/admin/item_list"} onSubmit={check}>
                                     <Form.Group className="mb-3" controlId="formBasicEmail">
                                         <Form.Label>
                                             <h5>Account</h5>
                                         </Form.Label>
-                                        <Form.Control type="email" placeholder="Enter account" />
+                                        <Form.Control id="username" type="text" placeholder="Enter account" />
                                         <p>
                                             Please enter your account to login
                                         </p>
@@ -34,7 +42,7 @@ function Login(){
                                                 Password
                                             </h5>
                                         </Form.Label>
-                                        <Form.Control type="password" placeholder="Password" />
+                                        <Form.Control id="password" type="password" placeholder="Password" />
                                     </Form.Group>
 
                                     <div className='center'>

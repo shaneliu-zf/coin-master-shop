@@ -42,9 +42,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-          <Route path="/admin">
-          <Route path="login" element={<Login />} />
-          </Route>
+          <Route path="/admin" element={<Login />} />
+          <Route path="/admin/login" element={<Login />} />
             <Route path="/admin" element={<Admin_layout />}>
               <Route path="trade" element={<Trade />} />
               <Route path="item_list" element={<Item_List />} />
