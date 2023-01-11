@@ -11,9 +11,12 @@ function check() {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
     if (username === "admin" && password === "admin") {
-        return true;
+        window.location.href = "/admin/item_list";
     }
-    alert("bad username or bad password");
+    document.getElementById("bad").style.display = "";
+    setTimeout(() => {
+        document.getElementById("bad").style.display = "none";
+    },800);
     return false;
 }
 function Login() {
@@ -25,7 +28,7 @@ function Login() {
                     <div className='information'>
                         <div className='information_bg '>
                             <h1>LOGIN</h1>
-                            <Form action={"/admin/item_list"} onSubmit={check}>
+                            <Form>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>
                                         <h5>Account</h5>
@@ -41,16 +44,16 @@ function Login() {
                                     </Form.Label>
                                     <Form.Control id="password" type="password" placeholder="Password" />
                                 </Form.Group>
-
+                                <br />
                                 <div className='center'>
-                                    <Button type="submit" className='button_blue'>
+                                    <Button type="button"  onClick={check} className='button_blue'>
                                         Login
                                     </Button>
                                 </div>
 
-                                <div>
-                                    <hr></hr>
-                                    <div className='center'>
+                                <div style={{height:"50px"}}>
+                                    <br />
+                                    <div id="bad" style={{display:"none"}} className='center'>
                                         <span className='wrong'>Invalid username or password.</span>
                                     </div>
                                 </div>
