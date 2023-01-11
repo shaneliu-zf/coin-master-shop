@@ -7,6 +7,21 @@ import 'bootstrap/dist/js/bootstrap.js';
 import '../css/style.css'
 import '../css/client.css'
 
+let curr_opacity = 1;
+function fadeOut() {
+    if (curr_opacity > 0.3) {
+        setTimeout(function () {
+            curr_opacity = curr_opacity - 0.1;
+            document.getElementById("bad").style.opacity = curr_opacity;
+            fadeOut()
+        }, 23)
+    }
+    else {
+        document.getElementById("bad").style.display = "none";
+        document.getElementById("bad").style.opacity = curr_opacity = 1;
+    }
+};
+
 function check() {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;
@@ -15,10 +30,13 @@ function check() {
     }
     document.getElementById("bad").style.display = "";
     setTimeout(() => {
-        document.getElementById("bad").style.display = "none";
-    },800);
+        fadeOut()
+    }, 1000);
     return false;
 }
+
+
+
 function Login() {
     return (
         <div>
@@ -46,14 +64,14 @@ function Login() {
                                 </Form.Group>
                                 <br />
                                 <div className='center'>
-                                    <Button type="button"  onClick={check} className='button_blue'>
+                                    <Button type="button" onClick={check} className='button_blue'>
                                         Login
                                     </Button>
                                 </div>
 
-                                <div style={{height:"50px"}}>
+                                <div style={{ height: "50px" }}>
                                     <br />
-                                    <div id="bad" style={{display:"none"}} className='center'>
+                                    <div id="bad" style={{ display: "none" }} className='center'>
                                         <span className='wrong'>Invalid username or password.</span>
                                     </div>
                                 </div>
