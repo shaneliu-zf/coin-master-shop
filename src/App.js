@@ -5,6 +5,7 @@ import { AddItem, AddToCart, AddTrade, CustomerCountAddOne, GetCart, GetCustomer
 import React, { useEffect, useState } from 'react';
 
 import GetData from "./backend/databaseCtl/getData";
+import ItemUpload from './admin-page/new_item';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
     console.log(data)
     return (
         <div>
+            <ItemUpload></ItemUpload>
         </div>
     )
 }

@@ -142,6 +142,11 @@ export async function GetCart(customer_id) {
     return ans
 }
 
+export async function GetLen(path) {
+    let target = await get(child(ref(getDatabase()), path));
+    return Object.keys(target.val()).length
+
+}
 
 export async function GetCustomerCount() {
     /*
