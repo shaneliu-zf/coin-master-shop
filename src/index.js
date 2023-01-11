@@ -49,7 +49,7 @@ root.render(
           <Route path="trade" element={<Trade />} />
           <Route path="item_list" element={<Item_List />} />
           <Route path="new_item" element={<ItemUpload />}>
-            <Route path=":item_id" element={<ItemUpload />} />
+            <Route path=":coin_id" element={<ItemUpload />} />
           </Route>
           <Route path="logout" element={<Logout />} />
         </Route>

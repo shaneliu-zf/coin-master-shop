@@ -36,9 +36,12 @@ function Item_List() {
                     <Col sm={10}></Col>
                     <Col sm={2}>
                         <div></div>
-                        <Button className='button_blue' size='lg'>
-                            upload
-                        </Button>
+
+                        <a href={"/admin/new_item"}>
+                            <Button className='button_blue' size='lg'>
+                                upload
+                            </Button>
+                        </a>
                     </Col>
                     <Col sm={12}>
                         <br></br>

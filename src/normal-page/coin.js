@@ -128,7 +128,6 @@ export default function Coin() {
                             </Button>
                         </div>
 
-                        <ItemUpload></ItemUpload>
                     </Col>
                 </Row>
             </div>
