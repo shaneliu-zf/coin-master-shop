@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+.search_bg {
+    padding: 30%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 10%;
+    background-color: #efefef;
+}
