@@ -14,8 +14,7 @@ export default function Logout(){
                         <br /><br /><br />
                         <br /><br /><br />
                         <br /><br /><br />
-                        <h1>404</h1>
-                        <h2>You have Logout!</h2>
+                        <h1>You have Logout!</h1>
                         <p>
                             <Link to="/">Go to the home page</Link>
                         </p>

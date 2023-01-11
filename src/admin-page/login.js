@@ -18,7 +18,8 @@ function fadeOut() {
     }
     else {
         document.getElementById("bad").style.display = "none";
-        document.getElementById("bad").style.opacity = curr_opacity = 1;
+        document.getElementById("bad").style.opacity = 1;
+        curr_opacity = 1;
     }
 };
 
@@ -28,11 +29,12 @@ function check() {
     if (username === "admin" && password === "admin") {
         window.location.href = "/admin/item_list";
     }
-    document.getElementById("bad").style.display = "";
-    setTimeout(() => {
-        fadeOut()
-    }, 1000);
-    return false;
+    else{
+        document.getElementById("bad").style.display = "";
+        setTimeout(() => {
+            fadeOut()
+        }, 1000);
+    }
 }
 
 

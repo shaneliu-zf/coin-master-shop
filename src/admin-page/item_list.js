@@ -56,9 +56,6 @@ function Item_List() {
                                                             <Button className='button_blue' >
                                                                 modify
                                                             </Button>
-                                                            <Button className='button_blue' >
-                                                                delete
-                                                            </Button>
                                                         </a>
                                                     </div>
                                                 </div>
