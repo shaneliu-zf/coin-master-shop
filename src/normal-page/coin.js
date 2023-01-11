@@ -14,6 +14,7 @@ import { useParams } from "react-router-dom";
 import { getItemOrFalse } from "../function/function";
 import { GetCustomerCount } from "../function/function";
 import loading from "../loading";
+import ItemUpload from '../admin-page/new_item';
 
 export default function Coin() {
     let { coin_id } = useParams();
@@ -127,6 +128,7 @@ export default function Coin() {
                             </Button>
                         </div>
 
+                        <ItemUpload></ItemUpload>
                     </Col>
                 </Row>
             </div>

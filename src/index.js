@@ -48,7 +48,9 @@ root.render(
         <Route path="/admin" element={<Admin_layout />}>
           <Route path="trade" element={<Trade />} />
           <Route path="item_list" element={<Item_List />} />
-          <Route path="new_item" element={<ItemUpload />} />
+          <Route path="new_item" element={<ItemUpload />}>
+            <Route path=":item_id" element={<ItemUpload />} />
+          </Route>
           <Route path="logout" element={<Logout />} />
         </Route>
         <Route path="/" element={<Layout />}>
