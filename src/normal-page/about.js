@@ -20,31 +20,9 @@ function About(){
                         <h2>ABOUT</h2>
                         <br></br>
                         <p>
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                        </p>
-
-                        <p>
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
-                            say anything cool, the text contents
+                        Coins is truly a professional coin sales website, with rich coin knowledge and professional teams. Our founding members ZF, nonorze, TYK, and Corexin. have many years of coin collection experience and a deep understanding of coins. Our team carefully selects a variety of top-quality coins and provides professional purchase advice for users. Coins website also regularly organizes various coin exhibitions and events, allowing users to directly understand the coins and interact with other coin enthusiasts.
+                    </p>
+                        <p>Shopping for coins on Coins website not only allows you to get quality coins, but also enjoy the comprehensive services we provide, including shopping guarantees, privacy protection, and professional customer service, among others. Welcome to Coins website, enjoy the wonderful coin journey.
                         </p>
                     </div>
                 </div>

@@ -8,7 +8,6 @@ import '../css/style.css'
 import '../css/client.css'
 
 import title from '../image/title.png'
-
 function Login(){
     return (
             <div>
