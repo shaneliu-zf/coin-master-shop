@@ -25,6 +25,8 @@ import Login from './admin-page/login';
 import App from "./App";
 
 import Admin_layout from "./admin-page/admin_layout";
+import {Col, Container, Row} from "react-bootstrap";
+import Search_page from "./normal-page/Search";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -48,9 +50,12 @@ root.render(
             <Route path=":coin_id" element={<Coin />} />
           </Route>
             <Route path="category">
+                <Route index element={<NoMatch />} />
                 <Route path=":category_name" element={<Category />} />
             </Route>
-          <Route path="test" element={<App />} />
+            <Route path="search">
+                <Route path=":search_post" element={<Search_page />} />
+            </Route>
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>
@@ -61,12 +66,26 @@ root.render(
 function NoMatch() {
   return (
     <div>
-      <br /><br /><br />
-      <h1>404</h1>
-      <h2>Nothing to see here!</h2>
-      <p>
-        <Link to="/">Go to the home page</Link>
-      </p>
+        <Row>
+        <Col sm={12}>
+            <Container>
+
+              <br /><br /><br />
+                <br /><br /><br />
+                <br /><br /><br />
+                <br /><br /><br />
+              <h1>404</h1>
+              <h2>Nothing to see here!</h2>
+              <p>
+                <Link to="/">Go to the home page</Link>
+              </p>
+                <br /><br /><br />
+                <br /><br /><br /><br /><br /><br />
+
+
+            </Container>
+        </Col>
+        </Row>
     </div>
   );
 }
