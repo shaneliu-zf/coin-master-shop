@@ -3,6 +3,8 @@ import carousel01 from "../image/carousel01.png";
 import carousel02 from "../image/carousel02.png";
 import carousel03 from "../image/carousel03.png";
 import each from "../image/each.png";
+import kennedy from "../image/kennedy.png";
+import walking_liberty from "../image/walking_liberty.png";
 import React from "react";
 
 import '../css/style.css'
@@ -21,9 +23,9 @@ function Main() {
                                     </h1>
                                     <br></br>
                                     <p>
-                                        A website for selling ancient coins for people is
-                                        A website for selling ancient coins for people is
-                                        A website for selling ancient coins for people is
+                                        A website for people who loves coins.
+                                        The website lists some ancient coin, has some product here,
+                                        to let people buy one if they're interested.
                                     </p>
                                 </div>
                             </Col>
@@ -42,9 +44,9 @@ function Main() {
                                     </h1>
                                     <br></br>
                                     <p>
-                                        A website for selling ancient coins for people is
-                                        A website for selling ancient coins for people is
-                                        A website for selling ancient coins for people is
+                                        Listing some ancient coins, having some different categories.
+                                        Various coins here to discover.
+
                                     </p>
                                 </div>
                             </Col>
@@ -64,9 +66,8 @@ function Main() {
                                     </h1>
                                     <br></br>
                                     <p>
-                                        A website for selling ancient coins for people is
-                                        A website for selling ancient coins for people is
-                                        A website for selling ancient coins for people is
+                                        Valuable coins here to collect.
+                                        every coin here are unique.
                                     </p>
                                 </div>
                             </Col>
@@ -108,7 +109,7 @@ function Main() {
                             <div className='arrival_item'>
                                 <Row>
                                     <Col sm={12}>
-                                        <img src={each} width='100%' />
+                                        <img src={kennedy} width='100%' />
                                     </Col>
 
                                     <Col>
@@ -117,7 +118,7 @@ function Main() {
 
                                     <Col sm={12}>
                                         <h3 className='center arrival_content'>
-                                            morgan dollars
+                                            kennedy dollars
                                         </h3>
                                     </Col>
                                 </Row>
@@ -127,7 +128,7 @@ function Main() {
                             <div className='arrival_item'>
                                 <Row>
                                     <Col sm={12}>
-                                        <img src={each} width='100%' />
+                                        <img src={walking_liberty} width='100%' />
                                     </Col>
 
                                     <Col>
@@ -136,7 +137,7 @@ function Main() {
 
                                     <Col sm={12}>
                                         <h3 className='center arrival_content'>
-                                            morgan dollars
+                                            walking liberty dollars
                                         </h3>
                                     </Col>
                                 </Row>

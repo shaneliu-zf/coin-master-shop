@@ -93,7 +93,8 @@ function NoMatch() {
               <Link to="/">Go to the home page</Link>
             </p>
             <br /><br /><br />
-            <br /><br /><br /><br /><br /><br />
+            <br /><br /><br />
+            <br /><br /><br />
 
 
           </Container>
